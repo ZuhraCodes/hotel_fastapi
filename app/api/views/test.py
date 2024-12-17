@@ -12,7 +12,7 @@ router = APIRouter()
 async def test(
         session: AsyncSession = Depends(get_general_session)
 ):
-    test_sql = text("""SELECT * FROM students""")
+    test_sql = text("""SELECT 1""")
     result = await session.execute(test_sql)
     map_res = result.mappings().all()
     return map_res
